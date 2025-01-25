@@ -21,6 +21,7 @@ pkgs.mkShell {
     tshark
     pandoc
     texlive.combined.scheme-full
+    kubectl
   ];
 
   shellHook = ''
