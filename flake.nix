@@ -36,6 +36,8 @@
         kubectl
         pandoc
 #texlive.combined.scheme-full
+        yt-dlp
+        ranger
       ];
 
       shellHook = ''
