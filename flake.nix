@@ -38,6 +38,9 @@
 #texlive.combined.scheme-full
         yt-dlp
         ranger
+        ncdu
+        rtorrent
+        elinks
       ];
 
       shellHook = ''
@@ -51,6 +54,18 @@
           fi
 
           export OPENAI_API_KEY="$SECRET_VALUE"
+        fi
+
+        if [ -z "$KAGI_API_KEY" ]; then
+          echo "KAGI_API_KEY is not set. Retrieving from AWS Secrets Manager..."
+
+          SECRET_VALUE=$(AWS_PROFILE=davidroussov aws secretsmanager get-secret-value --secret-id "kagi.api_key" --query 'SecretString' --output text 2>/dev/null)
+
+          if [ $? -ne 0 ]; then
+              exit 1
+          fi
+
+          export KAGI_API_KEY="$SECRET_VALUE"
         fi
 
         
