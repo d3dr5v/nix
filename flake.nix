@@ -35,12 +35,13 @@
         tshark
         kubectl
         pandoc
-#texlive.combined.scheme-full
         yt-dlp
         ranger
         ncdu
         rtorrent
         elinks
+        nodejs_23
+        texliveTeTeX
       ];
 
       shellHook = ''
