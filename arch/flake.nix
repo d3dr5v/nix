@@ -79,9 +79,11 @@
         if [ ! -d "$HOME/.oh-my-zsh" ]; then
           echo "Installing Oh My Zsh..."
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+          rm -f "$HOME/.zshrc"
+          ln -s "$HOME/@/dot/.zshrc" "$HOME/.zshrc"
         fi
 
-        /bin/zsh
+        zsh
       '';
     };
   };
