@@ -46,9 +46,8 @@
         epub2txt2
         gh
         zsh
-        rustc
-        cargo
 	openssh
+	rustup
       ];
 
       shellHook = ''
@@ -82,6 +81,8 @@
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
           rm -f "$HOME/.zshrc"
           ln -s "$HOME/@/dot/.zshrc" "$HOME/.zshrc"
+
+	  git clone https://github.com/jeffreytse/zsh-vi-mode "$HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode"
         fi
 
         zsh
