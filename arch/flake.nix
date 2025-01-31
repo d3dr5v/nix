@@ -85,6 +85,11 @@
 	  git clone https://github.com/jeffreytse/zsh-vi-mode "$HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode"
         fi
 
+	# rustup initialization
+	if [ ! -d "$HOME/.rustup" ]; then
+		rustup default stable
+	fi
+
         zsh
       '';
     };
