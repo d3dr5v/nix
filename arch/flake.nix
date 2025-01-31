@@ -48,6 +48,7 @@
         zsh
         rustc
         cargo
+	openssh
       ];
 
       shellHook = ''
