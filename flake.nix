@@ -42,6 +42,9 @@
         elinks
         nodejs_23
         texliveTeTeX
+        epub2txt2
+        gh
+        zsh
       ];
 
       shellHook = ''
@@ -69,8 +72,11 @@
           export KAGI_API_KEY="$SECRET_VALUE"
         fi
 
-        
-        cd /Users/david/@/
+        # Oh My Zsh installation
+        if [ ! -d "$HOME/.oh-my-zsh" ]; then
+          echo "Installing Oh My Zsh..."
+          sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+        fi
 
         /bin/zsh
       '';
