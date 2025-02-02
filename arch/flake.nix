@@ -46,8 +46,8 @@
         epub2txt2
         gh
         zsh
-	openssh
-	rustup
+        openssh
+        rustup
       ];
 
       shellHook = ''
