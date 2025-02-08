@@ -49,6 +49,8 @@
         podman-compose
         nodejs_23
         python313
+        lazygit
+        up
       ];
 
       shellHook = ''

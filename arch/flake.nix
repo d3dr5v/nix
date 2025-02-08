@@ -48,6 +48,8 @@
         zsh
         openssh
         rustup
+        lazygit
+        up
       ];
 
       shellHook = ''
