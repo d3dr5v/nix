@@ -41,7 +41,6 @@
         ncdu
         rtorrent
         elinks
-        nodejs_23
         texliveTeTeX
         epub2txt2
         gh
@@ -50,6 +49,10 @@
         rustup
         lazygit
         up
+        podman
+        podman-compose
+        nodejs_23
+        python313
       ];
 
       shellHook = ''
@@ -87,10 +90,19 @@
 	  git clone https://github.com/jeffreytse/zsh-vi-mode "$HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode"
         fi
 
-	# rustup initialization
-	if [ ! -d "$HOME/.rustup" ]; then
-		rustup default stable
-	fi
+        # rustup initialization
+        if [ ! -d "$HOME/.rustup" ]; then
+          rustup default stable
+        fi
+        
+        # Python crap
+        if [ ! -d "$HOME/.venv" ]; then
+          echo "Installing python packages"
+          python -m venv ~/.venv
+          source ~/.venv/bin/activate
+          pip install git+https://github.com/marcolardera/chatgpt-cli
+          deactivate
+        fi
 
         zsh
       '';
