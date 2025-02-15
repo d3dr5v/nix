@@ -51,6 +51,7 @@
         python313
         lazygit
         up
+        browsh
       ];
 
       shellHook = ''
