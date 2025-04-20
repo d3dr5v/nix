@@ -52,6 +52,7 @@
         lazygit
         up
         browsh
+        procps
       ];
 
       shellHook = ''
