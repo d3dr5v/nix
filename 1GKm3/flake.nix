@@ -47,7 +47,7 @@
         zsh
         podman
         podman-compose
-        nodejs_23
+        nodejs_24
         python313
         lazygit
         up
@@ -90,11 +90,6 @@
           git clone https://github.com/jeffreytse/zsh-vi-mode "$HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode"
         fi
 
-        # rustup initialization
-        if [ ! -d "$HOME/.rustup" ]; then
-          rustup default stable
-        fi
-
         # Python crap
         if [ ! -d "$HOME/.venv" ]; then
           echo "Installing python packages"
@@ -102,6 +97,11 @@
           source ~/.venv/bin/activate
           pip install git+https://github.com/marcolardera/chatgpt-cli
           deactivate
+        fi
+
+        # vim
+        if [ ! -d "$HOME/.vim/autoload" ]; then
+          curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         fi
 
         zsh
