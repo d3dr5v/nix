@@ -52,6 +52,8 @@
         up
         procps
         ffmpeg
+        emacs
+        tig
       ];
 
       shellHook = ''
@@ -117,7 +119,7 @@
         if [ -z "$KAGI_API_KEY" ]; then
           echo "KAGI_API_KEY is not set. Retrieving from AWS SSM Parameter Store..."
 
-          KAGI_API_KEY_VALUE$(
+          KAGI_API_KEY_VALUE=$(
             AWS_PROFILE=davidroussov \
             aws ssm get-parameter \
               --name "/kagi/api_key" \
