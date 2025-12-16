@@ -38,18 +38,14 @@
         yt-dlp
         ranger
         ncdu
-        rtorrent
-        elinks
         texliveTeTeX
         epub2txt2
         gh
-        direnv
         zsh
         podman
         podman-compose
         nodejs_24
         python313
-        up
         procps
         ffmpeg
         emacs
@@ -146,7 +142,7 @@
           git clone https://github.com/jeffreytse/zsh-vi-mode "$HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode"
         fi
 
-        # Python crap
+        # python
         if [ ! -d "$HOME/.venv" ]; then
           echo "Installing python packages"
           python -m venv ~/.venv

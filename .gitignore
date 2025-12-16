@@ -1,1 +1,6 @@
-*.lock
+*
+!.gitignore
+!1GKm3/
+!1GKm3/flake.nix
+!EcHPZ/
+!EcHPZ/flake.nix
