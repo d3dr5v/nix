@@ -25,7 +25,6 @@
         tmux
         moreutils
         timewarrior
-        mpv
         awscli
         direnv
         htop
@@ -50,6 +49,10 @@
         ffmpeg
         emacs
         tig
+        fzf
+        mpv
+        supabase-cli
+        postgresql
       ];
 
       shellHook = ''
@@ -150,6 +153,7 @@
           pip install llm
           llm install llm-gemini
           llm install llm-anthropic
+          pip install thefuck
           deactivate
         fi
 
