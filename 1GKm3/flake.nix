@@ -45,10 +45,9 @@
         direnv
         htop
         ripgrep
-	neomutt
+	      neomutt
         sc-im
         tshark
-        kubectl
         pandoc
         yt-dlp
         ranger
@@ -63,7 +62,7 @@
         python313
         procps
         ffmpeg
-	emacs
+	      emacs
         tig
         fzf
         mpv
@@ -169,7 +168,6 @@
           pip install llm
           llm install llm-gemini
           llm install llm-anthropic
-          pip install thefuck
           deactivate
         fi
 
