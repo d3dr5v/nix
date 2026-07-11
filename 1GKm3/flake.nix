@@ -1,7 +1,7 @@
 {
   description = "Global development environment";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/ace249efcbdfbd4c53aa9529251ab848fe68c5e2";
 
   outputs = { self, nixpkgs }:
   let
@@ -12,6 +12,22 @@
         allowUnfree = true;
         allowUnfreePredicate = _: true;
       };
+      overlays = [
+        (_f: p: {
+          yt-dlp = p.yt-dlp.overridePythonAttrs (o: {
+            # don't use gnome keyring
+            dependencies = (
+              __filter (
+                p:
+                !(__elem p.pname [
+                  "cffi"
+                  "secretstorage"
+                ])
+              ) o.dependencies
+            );
+          });
+        })
+      ];
     };
   in {
     devShells.${system}.default = pkgs.mkShell {
@@ -29,7 +45,7 @@
         direnv
         htop
         ripgrep
-        neomutt
+	neomutt
         sc-im
         tshark
         kubectl
@@ -47,7 +63,7 @@
         python313
         procps
         ffmpeg
-        emacs
+	emacs
         tig
         fzf
         mpv
