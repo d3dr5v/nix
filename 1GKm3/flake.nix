@@ -66,7 +66,6 @@
         tig
         fzf
         mpv
-        supabase-cli
         postgresql
       ];
 
